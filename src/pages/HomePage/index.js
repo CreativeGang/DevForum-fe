@@ -1,11 +1,10 @@
 import React from 'react'
 import NavBar from '../../common/layout/Navbar/index'
-import Article from './compenents/Article'
+import Article from '../Article/index'
 const Homepage = () => {
   return (
     <>
       <NavBar/>
-      <Article />
     </>
   )
 }
