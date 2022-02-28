@@ -1,0 +1,179 @@
+.postPage {
+  width: 50%;
+  margin-left: 25%;
+  h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(24, 24, 23);
+  }
+  .postPage__header {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: row;
+    align-items: center;
+
+    border-bottom: #e3e5e6 solid 1px;
+    img {
+      width: 28px;
+    }
+
+    p {
+      width: 30%;
+      padding-top: 10px;
+      margin-left: 10px;
+    }
+
+    span {
+      margin-left: auto;
+      color: #8e9091;
+    }
+  }
+
+  .postPage__setTitle {
+    input {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 16px;
+
+      border: #e3e5e6 solid 2px;
+    }
+  }
+
+  .postPage__setCategory {
+    display: flex;
+    flex-direction: row;
+    .postPage__setCategory__select {
+      margin-top: 30px;
+      width: 100%;
+      margin-right: 10%;
+
+      select {
+        margin-top: 10px;
+        padding: 20px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        font-size: 16px;
+        width: 100%;
+        border: solid 1px #e9ecee;
+        background-color: #f8f9fa;
+        color: #8e9091;
+        padding: 10px;
+      }
+    }
+  }
+
+  .postPage__setDescription {
+    margin-top: 30px;
+
+    .postPage__setDescription__writeSpace {
+      textarea {
+        padding: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 1.42857143;
+        font-family: inherit;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 100%;
+        height: 190px;
+        border: solid 1px #e9ecee;
+        background-color: #f8f9fa;
+        color: #8e9091;
+        resize: none;
+        overflow: auto;
+      }
+    }
+  }
+
+  .postPage__setTags {
+    margin-top: 30px;
+
+    input {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      border: #e3e5e6 solid 2px;
+    }
+  }
+
+  .postPage__settings {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    .postPage__settings__whoCanSee {
+      // width: 30%;
+
+      input {
+        margin-top: 10px;
+      }
+
+      input:last-child {
+        margin-left: 30px;
+      }
+    }
+    // .postPage__settings__share {
+    //   width: 30%;
+    //   margin-left: 3%;
+    //   display: flex;
+    //   flex-direction: row;
+    // }
+    // .postPage__settings__matureThread {
+    //   width: 30%;
+    //   margin-left: 3%;
+    //   display: flex;
+    //   flex-direction: row;
+    // }
+  }
+
+  .postPage__submit {
+    margin-top: 30px;
+    text-align: right;
+    .postPage__submit__cancel {
+      padding: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      width: 140px;
+      color: #394047;
+      text-decoration: none;
+      margin-left: auto;
+      margin-right: 15px;
+      height: 38px;
+      background-color: #e9ecee;
+      justify-content: center;
+      align-items: center;
+    }
+    .postPage__submit__submit {
+      padding: 10px;
+      padding-left: 25px;
+      padding-right: 25px;
+      width: 140px;
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: auto;
+      margin-right: 15px;
+      height: 38px;
+      background-color: #f9bc64;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .postPage {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .postPage__setCategory {
+    flex-direction: column !important;
+    select {
+      width: 100%;
+    }
+  }
+}
