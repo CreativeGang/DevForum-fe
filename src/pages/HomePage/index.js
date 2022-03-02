@@ -1,12 +1,12 @@
-import React from 'react'
-import NavBar from '../../common/layout/Navbar/index'
-import Article from '../Article/index'
+import React from 'react';
+import NavBar from '../../common/layout/Navbar/index';
+import Article from '../../common/layout/Article/index';
 const Homepage = () => {
   return (
     <>
-      <NavBar/>
+      <NavBar />
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

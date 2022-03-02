@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import HomePage from './pages/HomePage';
-import Article from './pages/Article';
+import PublicPost from './pages/PublicPost';
 import Post from './pages/PostPage/PostPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -13,11 +13,11 @@ const App = () => {
       <Fragment>
         <section>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/login" component={Login} />
-            <Route exaxt path="/register" component={Register} />
-            <Route path="/article/:id"  component={Article}></Route>
-            <Route path="/post"  component={Post}></Route>
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
+            <Route path='/posts' component={PublicPost}></Route>
+            <Route path='/creat_post' component={Post}></Route>
           </Switch>
         </section>
       </Fragment>
