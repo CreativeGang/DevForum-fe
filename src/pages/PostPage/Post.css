@@ -2,7 +2,7 @@
   width: 50%;
   margin-left: 25%;
 }
-.postPage h1 {
+.postPage h2 {
   font-size: 16px;
   font-weight: 400;
   color: #181817;
@@ -17,10 +17,10 @@
 .postPage .postPage__header img {
   width: 28px;
 }
-.postPage .postPage__header p {
-  width: 30%;
+.postPage .postPage__header h1 {
   padding-top: 10px;
   margin-left: 10px;
+  margin-bottom: 20px;
 }
 .postPage .postPage__header span {
   margin-left: auto;
@@ -28,33 +28,26 @@
 }
 .postPage .postPage__setTitle input {
   margin-top: 10px;
-  width: 100%;
+  width: 95%;
   padding: 8px;
   padding-left: 20px;
   padding-right: 20px;
   font-size: 16px;
   border: #e3e5e6 solid 2px;
 }
-.postPage .postPage__setCategory {
-  display: flex;
-  flex-direction: row;
-}
 .postPage .postPage__setCategory .postPage__setCategory__select {
   margin-top: 30px;
-  width: 100%;
   margin-right: 10%;
 }
 .postPage .postPage__setCategory .postPage__setCategory__select select {
   margin-top: 10px;
-  padding: 20px !important;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+  padding: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   font-size: 16px;
-  width: 100%;
   border: solid 1px #e9ecee;
   background-color: #f8f9fa;
   color: #8e9091;
-  padding: 10px;
 }
 .postPage .postPage__setDescription {
   margin-top: 30px;
@@ -67,7 +60,7 @@
   font-family: inherit;
   font-size: 16px;
   margin-top: 10px;
-  width: 100%;
+  width: 95%;
   height: 190px;
   border: solid 1px #e9ecee;
   background-color: #f8f9fa;
@@ -80,7 +73,7 @@
 }
 .postPage .postPage__setTags input {
   margin-top: 10px;
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border: #e3e5e6 solid 2px;
 }
@@ -132,14 +125,6 @@
   .postPage {
     width: 80%;
     margin-left: 10%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .postPage__setCategory {
-    flex-direction: column !important;
-  }
-  .postPage__setCategory select {
-    width: 100%;
   }
 }
 

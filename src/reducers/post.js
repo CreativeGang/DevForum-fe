@@ -13,12 +13,7 @@ export const post = (state = initialPost, action)=>{
             console.log(action.postContent)
             return {
                 ...state,
-                title:action.postContent.title,
-                category:action.postContent.category,
-                subCategory:action.postContent.subCategory,
-                description:action.postContent.description,
-                tags:action.postContent.tags,
-                auth:action.postContent.auth,
+                ...action.postContent,
             };
         
 
