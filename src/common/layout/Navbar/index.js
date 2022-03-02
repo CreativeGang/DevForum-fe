@@ -12,11 +12,12 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavLink to="/">DevForum</NavLink>
+        <NavLink to='/'>DevForum</NavLink>
         <NavMenu>
-          <NavButton to="/">Developers</NavButton>
-          <NavButton to="/register">Register</NavButton>
-          <NavButton to="/login">Log in</NavButton>
+          <NavButton to='/'>Developers</NavButton>
+          <NavButton to='/post'>Posts</NavButton>
+          <NavButton to='/register'>Register</NavButton>
+          <NavButton to='/login'>Log in</NavButton>
         </NavMenu>
         <SwitchableButton>
           <MenuIcon />
