@@ -1,0 +1,131 @@
+.postPage {
+  width: 50%;
+  margin-left: 25%;
+}
+.postPage h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #181817;
+}
+.postPage .postPage__header {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: #e3e5e6 solid 1px;
+}
+.postPage .postPage__header img {
+  width: 28px;
+}
+.postPage .postPage__header h1 {
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.postPage .postPage__header span {
+  margin-left: auto;
+  color: #8e9091;
+}
+.postPage .postPage__setTitle input {
+  margin-top: 10px;
+  width: 95%;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  border: #e3e5e6 solid 2px;
+}
+.postPage .postPage__setCategory .postPage__setCategory__select {
+  margin-top: 30px;
+  margin-right: 10%;
+}
+.postPage .postPage__setCategory .postPage__setCategory__select select {
+  margin-top: 10px;
+  padding: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px;
+  border: solid 1px #e9ecee;
+  background-color: #f8f9fa;
+  color: #8e9091;
+}
+.postPage .postPage__setDescription {
+  margin-top: 30px;
+}
+.postPage .postPage__setDescription .postPage__setDescription__writeSpace textarea {
+  padding: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 1.42857143;
+  font-family: inherit;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 95%;
+  height: 190px;
+  border: solid 1px #e9ecee;
+  background-color: #f8f9fa;
+  color: #8e9091;
+  resize: none;
+  overflow: auto;
+}
+.postPage .postPage__setTags {
+  margin-top: 30px;
+}
+.postPage .postPage__setTags input {
+  margin-top: 10px;
+  width: 95%;
+  padding: 10px;
+  border: #e3e5e6 solid 2px;
+}
+.postPage .postPage__settings {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.postPage .postPage__settings .postPage__settings__whoCanSee input {
+  margin-top: 10px;
+}
+.postPage .postPage__settings .postPage__settings__whoCanSee input:last-child {
+  margin-left: 30px;
+}
+.postPage .postPage__submit {
+  margin-top: 30px;
+  text-align: right;
+}
+.postPage .postPage__submit .postPage__submit__cancel {
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 140px;
+  color: #394047;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 15px;
+  height: 38px;
+  background-color: #e9ecee;
+  justify-content: center;
+  align-items: center;
+}
+.postPage .postPage__submit .postPage__submit__submit {
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: 140px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 15px;
+  height: 38px;
+  background-color: #f9bc64;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .postPage {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+/*# sourceMappingURL=Post.css.map */
