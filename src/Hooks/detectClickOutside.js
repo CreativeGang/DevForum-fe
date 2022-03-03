@@ -6,7 +6,7 @@ export const useClickOutside = (handler) => {
   useEffect(() => {
     let maybeHandler = (event) => {
       if (!domNode.current.contains(event.target)) {
-        setTimeout(handler, 400);
+        setTimeout(handler, 200);
       }
     };
     document.addEventListener('mousedown', maybeHandler);
