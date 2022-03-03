@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   LoginContent,
   LoginLogoWrapper,
@@ -15,38 +15,78 @@ import {
   PasswordWrapper,
   LoginButton,
 } from './LoginFormElements';
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+import {login} from '../../../../actions/auth'
+import {Redirect} from 'react-router-dom';
 
-const LoginForm = () => {
+ 
+const LoginForm = ({login, isAuthenticated}) => {
+ const [formData, setFormData] = useState({
+   email: '',
+   password:''
+ })
+
+ const {email, password} = formData;
+ const handleInputChange = e => {
+   setFormData({...formData, [e.target.name]: e.target.value})
+ }
+ const handleSubmitForm = async e => {
+  e.preventDefault();
+  login(email, password)
+ }
+
+ //Redirect if logged in
+ if(isAuthenticated){
+   return <Redirect to = '/'/>
+ }
   return (
     <LoginContent>
       <LoginLogoWrapper>
         <LogoContainer>
           <LogoIcon />
-          <LogoLink to="/">DevForum</LogoLink>
+          <LogoLink to="/">DevForum </LogoLink>
         </LogoContainer>
       </LoginLogoWrapper>
       <Intro>
         <IntroTitle>Login to writer and answer</IntroTitle>
         <IntroContent>Find the answer of your promble quickly!</IntroContent>
       </Intro>
-      <LoginFrom>
+      <LoginFrom onSubmit = { e => handleSubmitForm(e)}>
         <LoginSection>
           <LoginLabel>Username</LoginLabel>
-          <LoginInput placeholder="Please Enter Your User Name"></LoginInput>
+          <LoginInput
+            name="email"
+            value={email}
+            onChange={(e) => handleInputChange(e)}
+            required 
+            placeholder="Please Enter Your User Name"></LoginInput>
         </LoginSection>
         <LoginSection>
           <LoginLabel>Password</LoginLabel>
           <PasswordWrapper>
             <LoginInput
+               name="password"
+               value={password}
               type="password"
               placeholder="Please Enter Your Password"
+            onChange={(e) => handleInputChange(e)}
+              required
             ></LoginInput>
           </PasswordWrapper>
         </LoginSection>
-        <LoginButton to="/register">Login</LoginButton>
+        <LoginButton/>
       </LoginFrom>
     </LoginContent>
   );
 };
+const mapStatetoProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+})
 
-export default LoginForm;
+LoginForm.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+}
+
+export default connect(mapStatetoProps, {login})(LoginForm);
