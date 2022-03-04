@@ -12,8 +12,8 @@ import Alert from './common/layout/Alert';
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/auth';
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
+if (localStorage.getItem("token")) {
+  setAuthToken(localStorage.getItem("token"));
 }
 
 const App = () => {
