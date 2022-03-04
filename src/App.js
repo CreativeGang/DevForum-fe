@@ -11,9 +11,10 @@ import store from './store';
 import Alert from './common/layout/Alert';
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/auth';
+import PublicPost from './pages/PublicPost';
 
-if (localStorage.getItem("token")) {
-  setAuthToken(localStorage.getItem("token"));
+if (localStorage.getItem('token')) {
+  setAuthToken(localStorage.getItem('token'));
 }
 
 const App = () => {
@@ -31,7 +32,9 @@ const App = () => {
               <Route exact path="/login" component={Login} />
               <Route exaxt path="/register" component={Register} />
               <Route path="/article/:id" component={Article}></Route>
-              <Route path="/post"  component={Post}></Route>
+              <Route path="/post" component={Post}></Route>
+              <Route path="/post" component={PublicPost}></Route>
+              <Route path="/create_post" component={Post}></Route>
             </Switch>
           </section>
         </Fragment>
