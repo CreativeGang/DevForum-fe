@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import { BsStopwatch } from 'react-icons/bs';
-import AvatarImg from '../../static/images/B.svg';
+import AvatarImg from '../../../static/images/B.svg';
 import { GrLike, GrDislike } from 'react-icons/gr';
 import {
   ArticleWrap,

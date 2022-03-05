@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import HomePage from './pages/HomePage';
-import Article from './pages/Article';
+import Article from './common/layout/Article';
 import Post from './pages/PostPage/PostPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PublicPost from './pages/PublicPost';

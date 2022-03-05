@@ -1,5 +1,5 @@
 import Navbar from '../../common/layout/Navbar';
-import Article from '../Article';
+import Article from '../../common/layout/Article';
 import Filter from '../../common/layout/Filter';
 import { PublicPostPage, PostWrapper } from './PublicPostElement';
 
