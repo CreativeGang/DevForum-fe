@@ -4,8 +4,8 @@ const CategoryList = {
   Category: [
     { key: 1, name: 'Frontend', color: '#f9bc64', topic: filter[0] },
     { key: 2, name: 'Backend', color: '#FF755A', topic: filter[0] },
-    { key: 3, name: 'Web Design', color: '#4436f8', topic: filter[0] },
-    { key: 4, name: 'Q&A', color: '#5dd39e', topic: filter[0] },
+    { key: 3, name: 'WebDesign', color: '#4436f8', topic: filter[0] },
+    { key: 4, name: 'SoftwareDesign', color: '#5dd39e', topic: filter[0] },
   ],
 };
 

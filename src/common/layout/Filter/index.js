@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { filterAdded } from '../../../store/filter';
 import DropdownHeader from './components/Dropdown/Header/index';
 import DropdownMenu from './components/Dropdown/Menu/index';
 import {
@@ -20,6 +21,8 @@ export default function Filter() {
   const [isOpen, setIsOpen] = useState(false);
   const [filterName, setFilterName] = useState('Category');
   const { width } = useWindowSize();
+  const dispatch = useDispatch();
+
   const DropdownHandler = (name) => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
     setFilterName(name);
@@ -45,7 +48,15 @@ export default function Filter() {
             </HandleEvent>
           ) : (
             <OtherFilter>
-              <Filters>Latest</Filters>
+              <Filters
+                onClick={() => {
+                  dispatch({
+                    type: filterAdded.type,
+                    payload: { Params: { latest_post: true } },
+                  });
+                }}>
+                Latest
+              </Filters>
               <Filters>MostLiked</Filters>
             </OtherFilter>
           )}
@@ -58,7 +69,8 @@ export default function Filter() {
                 <DropdownMenu
                   key={element.key}
                   color={element.color}
-                  headerName={element.topic}>
+                  headerName={element.topic}
+                  itemName={element.name}>
                   {element.name}
                 </DropdownMenu>
               );
