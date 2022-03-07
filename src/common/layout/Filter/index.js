@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { filterAdded } from '../../../store/filter';
+import { filterAdded, loadFilter } from '../../../store/filter';
 import DropdownHeader from './components/Dropdown/Header/index';
 import DropdownMenu from './components/Dropdown/Menu/index';
 import {
@@ -54,6 +54,11 @@ export default function Filter() {
                     type: filterAdded.type,
                     payload: { Params: { latest_post: true } },
                   });
+                  dispatch(
+                    loadFilter({
+                      Latest_post: true,
+                    })
+                  );
                 }}>
                 Latest
               </Filters>
