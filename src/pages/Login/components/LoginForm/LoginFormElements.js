@@ -87,7 +87,7 @@ export const IntroContent = styled.p`
   color: #8e9091;
 `;
 
-export const LoginFrom = styled.div`
+export const LoginFrom = styled.form`
   position: relative;
   max-width: 772px;
   margin: 0 auto;
@@ -166,7 +166,10 @@ export const PasswordWrapper = styled.div`
   position: relative;
 `;
 
-export const LoginButton = styled(Link)`
+export const LoginButton = styled.input.attrs({
+  type: 'submit',
+  value: 'Login',
+})`
   color: #ffffff;
   height: 52px;
   font-size: 17px;

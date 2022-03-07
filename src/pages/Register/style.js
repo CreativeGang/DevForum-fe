@@ -28,7 +28,7 @@ export const RegisterWrapper = styled.div`
   };
   @media only screen and (max-width: 1400px) {
     padding-top: 30px;
-    height: 970px;
+    height: 1060px;
   };
 `;
 
