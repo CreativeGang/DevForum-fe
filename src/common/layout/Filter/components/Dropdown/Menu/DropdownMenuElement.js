@@ -44,3 +44,5 @@ export const ItemNames = styled.span`
     background-color: ${(props) => props.color};
   }
 `;
+
+export const ClickHandler = styled.div``;

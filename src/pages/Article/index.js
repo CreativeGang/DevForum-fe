@@ -16,38 +16,30 @@ import {
   LikeContainer,
 } from './ArticleElements';
 
-const Article = () => {
+const Article = (props) => {
   return (
     <ArticleWrap>
       <ArticleContainer>
         <ContextHeader>
           <TopicHeader>
-            <AvatarContainer src={AvatarImg} alt="avatar" />
-            <Name>Benjamin Caesar</Name>
+            <AvatarContainer src={AvatarImg} alt='avatar' />
+            <Name>{props.post.name}</Name>
           </TopicHeader>
           <TopDate>
             <IconContainer>
               <BsStopwatch />
             </IconContainer>
-            <h2>06 May, 2017</h2>
+            <h2>{props.post.date}</h2>
           </TopDate>
         </ContextHeader>
+        <TopText>{props.post.text}</TopText>
         <TopText>
-          Welcome to Prey.A lot of this game is going to feel familiar — you’ll
-          see bits and pieces from a dozen well-loved games in its DNA.But that
-          doesn’t mean you’re going to immediately understand how everything
-          works. That’s what we’re here for. Let’s talk about some of the habits
-          you’re going to have to pick up, concepts you’ll have to learn and
-          choices you’re going to be making as you play.
-        </TopText>
-        <TopText>
-          We’re going to break it down into three rough categories: Your world,
-          your enemies (and ways to kill them) and yourself.
+          category: {`${props.post.category} tags: ${props.post.tags}`}
         </TopText>
         <TopicFooter>
           <LikeContainer>
             <GrDislike />
-            <span>21</span>
+            <span> {props.post.likes || '0'}</span>
           </LikeContainer>
           <LikeContainer>
             <GrLike />
