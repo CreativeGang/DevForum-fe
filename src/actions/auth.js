@@ -14,11 +14,11 @@ import { setAlert } from './alert';
 
 //Load User
 export const loadUser = () => async (dispatch) => {
-  if (localStorage.getItem("token")) {
-    setAuthToken(localStorage.getItem("token"));
+  if (localStorage.getItem('token')) {
+    setAuthToken(localStorage.getItem('token'));
   }
   try {
-    const res = await axios.get(process.env.REACT_APP_AUTH_API);
+    const res = await axios.get(process.env.REACT_APP_API_URL + '/v1/auth/');
     dispatch({
       type: USER_LOADED,
       payload: res.data,
@@ -42,7 +42,11 @@ export const register =
 
     const body = JSON.stringify({ name, email, password });
     try {
-      const res = await axios.post(process.env.REACT_APP_REGISTER_USER_API, body, config);
+      const res = await axios.post(
+        process.env.REACT_APP_API_URL + '/v1/users/',
+        body,
+        config
+      );
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data,
@@ -70,7 +74,11 @@ export const login = (email, password) => async (dispatch) => {
 
   const body = JSON.stringify({ email, password });
   try {
-    const res = await axios.post(process.env.REACT_APP_LOGIN_API, body, config);
+    const res = await axios.post(
+      process.env.REACT_APP_API_URL + '/v1/login/',
+      body,
+      config
+    );
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
