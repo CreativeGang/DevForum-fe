@@ -1,5 +1,10 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 import {post} from "./post"
+import alert from './alert';
+import auth from './auth';
+
 export default combineReducers({
-    post,
+  alert,
+  auth,
+  post,
 });

@@ -14,7 +14,6 @@ color: #333;
 padding: 2rem;
 max-width: 100%;
 z-index:3;
-
 `; 
 
 export const NavLink =  styled(Link)`
