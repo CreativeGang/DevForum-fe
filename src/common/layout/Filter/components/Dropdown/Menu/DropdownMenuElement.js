@@ -25,6 +25,7 @@ export const ItemNames = styled.span`
   padding: 3px 5px;
   margin: 10px;
   border-radius: 2px;
+  cursor:grab;
   background-color: ${(props) =>
     props.name === 'Tags' ? props.color : 'transparent'};
 
