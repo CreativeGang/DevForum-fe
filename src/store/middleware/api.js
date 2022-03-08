@@ -10,6 +10,7 @@ const api =
     const { url, method, data, onStart, onSuccess, onError, params } =
       action.payload;
     if (onStart) dispatch({ type: onStart });
+
     next(action);
     try {
       const response = await axios.request({
