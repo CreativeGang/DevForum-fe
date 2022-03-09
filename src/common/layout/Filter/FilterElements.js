@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FilterWrapper = styled.section`
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   display: flex;
   flex-wrap: wrap;
@@ -12,7 +12,7 @@ export const FilterWrapper = styled.section`
   max-height: 500px;
   margin: 10px auto 10px;
   z-index: 10;
-  justify-content: ${({ width }) => (width < 480 ? 'center' : '')};
+  justify-content: ${({ width }) => (width < 480 ? "center" : "")};
   @media only screen and (min-width: 530px) {
     width: 500px;
   }
@@ -29,7 +29,7 @@ export const FilterWrapper = styled.section`
 
 export const HandleEvent = styled.div``;
 export const HeaderBar = styled.div`
-  width: ${({ width }) => (width < 480 ? '90%' : '100%')};
+  width: ${({ width }) => (width < 480 ? "90%" : "100%")};
   min-height: 68px;
   max-height; 170px;
   display: flex;
@@ -51,7 +51,7 @@ export const MenuWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  top: ${({ width }) => (width > 1000 ? '-18px' : '0')};
+  top: ${({ width }) => (width > 1000 ? "-18px" : "0")};
   border-top: solid 1px #f9bc64;
   box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 8%);
   ${({ width }) => {
