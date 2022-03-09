@@ -1,11 +1,7 @@
 import Navbar from "../../common/layout/Navbar";
 import Article from "../Article";
 import Filter from "../../common/layout/Filter";
-import {
-  PublicPostPage,
-  PostWrapper,
-  Contentcontainer,
-} from "./PublicPostElement";
+import { PublicPostPage, PostWrapper } from "./PublicPostElement";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadPosts, selectFirstNPosts } from "../../store/posts";
