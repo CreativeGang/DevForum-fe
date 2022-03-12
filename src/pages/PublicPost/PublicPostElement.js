@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const PublicPostPage = styled.body`
+export const PublicPostPage = styled.section`
   position: relative;
 `;
 
-export const PostWrapper = styled.main`
+export const PostWrapper = styled.div`
   position: absolute;
   top: 200px;
   display: flex;

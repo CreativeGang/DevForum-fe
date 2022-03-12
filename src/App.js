@@ -29,6 +29,7 @@ const App = () => {
           <section>
             <Alert />
             <Switch>
+
               <Route exact path="/" component={HomePage} />
               <Route exact path="/login" component={Login} />
               <Route exaxt path="/register" component={Register} />
@@ -37,6 +38,7 @@ const App = () => {
               <Route path="/post" component={PublicPost}></Route>
               <Route path="/create_post" component={Post}></Route>
               <Route path="/UsersPage" component={UsersPage}></Route>
+
             </Switch>
           </section>
         </Fragment>
