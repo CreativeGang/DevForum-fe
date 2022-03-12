@@ -1,13 +1,16 @@
 // css style file
-import styles from 'styled-components';
+import styles from "styled-components";
 
 export const ArticleWrap = styles.div`
+
   font-family: 'Nunito Sans', sans-serif;
   display: flex;
   font-size: 16px;
   line-height: 1.75;
   background-color: #F8F9FA;
-  `
+  width: 70%;
+  justify-content: center;
+  `;
 export const ArticleContainer = styles.div`
   display: flex
   flex-direction: column;
@@ -19,10 +22,10 @@ export const ArticleContainer = styles.div`
   background-color: #ffffff;
 
   @media only screen and (max-width: 1280px) {
-    width: 90%;
+    width: 70%;
     margin: 10px auto;
   };
-  `
+  `;
 export const ContextHeader = styles.div`
   color: #333;
   text-align: center;
@@ -36,36 +39,36 @@ export const ContextHeader = styles.div`
   @media only screen and (max-width: 410px) {
     flex-direction: column;
   };
-  `
+  `;
 export const TopicHeader = styles.div`
   display: flex;
-  `
+  `;
 export const AvatarContainer = styles.img`
   width: 32px;
   height: 32px;
   padding: 5px 0 0 0;
-  `
+  `;
 export const Name = styles.h2`
   margin-left: 30px;
   color: #394047;
   font-weight: 600;
-  `
+  `;
 export const TopDate = styles.div`
   display: flex;
   color: #8E9091;
-`
+`;
 
 export const IconContainer = styles.div`
   margin: 2px 5px;
   @media only screen and (max-width: 410px) {
     margin-right: 40px;
   };
-  `
+  `;
 
 export const TopText = styles.div`
   margin-top: 30px;
   color: #8E9091;
-  `
+  `;
 
 export const TopicFooter = styles.div`
   display: flex;
@@ -79,7 +82,7 @@ export const TopicFooter = styles.div`
   padding: 40px 0;
   color: #8E9091;
   //background-color: blue;
-  `
+  `;
 export const LikeContainer = styles.div`
   display: flex;
   justify-content: space-between;

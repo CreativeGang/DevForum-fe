@@ -20,16 +20,12 @@ import { IconContext } from 'react-icons/lib';
 
 
 const Article = (props) => {
-  const [showLike, setShowLike ] = useState(false)
-  const [removeLike, setRemoveLike ] = useState(false)
-  const handleAddlike = () => {
-    setShowLike(true)
-    setRemoveLike(false)
-  }
-  const handleRemovelike = () => {
-    setShowLike(false)
-    setRemoveLike(true)
-  }
+  const [islike, setIsLike ] = useState(null)
+
+  const handleLike = () => {
+    setIsLike((prevState)=> !prevState)
+  } 
+
   return (
     <ArticleWrap>
       <ArticleContainer>
@@ -52,10 +48,10 @@ const Article = (props) => {
         <TopicFooter>
           <LikeContainer>
             <Button
-            onClick={handleRemovelike}
+            onClick={handleLike}
             >
             <IconContext.Provider
-            value={{size: removeLike ? '1.5em': '1.2em'}}
+            value={{size:  islike === null ? '1.2em' : !islike ?  '1.5em': '1.2em'}}
             >
               <div>
               <GrDislike />
@@ -66,10 +62,10 @@ const Article = (props) => {
           </LikeContainer>
           <LikeContainer>
             <Button
-            onClick={handleAddlike}
+            onClick={handleLike}
             >
             <IconContext.Provider 
-            value={{size: showLike ? '1.5em': '1.2em'}}
+            value={{size: islike ? '1.5em': '1.2em'}}
             >
             <div><GrLike /></div>
             </IconContext.Provider>
