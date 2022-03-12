@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
-import defaultUser from "../../static/images/default-user.jpg"
+import React from "react";
 
-function User(props){
-    const {content} = props
+function User({content}){
 
     return(
         <div className="userPart">
             <div className="userPart_img">
-                <img src={require("../../static/images/"+content.image)} alt="user-image"></img>
+                <img src={require(`../../static/images/${content.image}`)} alt="user-image"></img>
             </div>
             <div className="userPart__details">
                 <h2>{content.username}</h2>
