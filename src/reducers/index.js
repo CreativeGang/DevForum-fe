@@ -1,5 +1,16 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
+
 import {post} from "./post"
+import alert from './alert';
+import auth from './auth';
+import posts from '../store/posts';
+import filter from '../store/filter';
+
 export default combineReducers({
-    post,
+  alert,
+  auth,
+  post,
+  posts,
+  filter,
+
 });
