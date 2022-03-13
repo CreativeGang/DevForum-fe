@@ -15,7 +15,7 @@ function Post(props){
         tags:[],
         auth:""
     }
-    const [postContent,setPostContent] = React.useState(defaultPost);
+    const [postContent,setPostContent] = useState(defaultPost);
 
     const handleOnChange = (event) => {
         const target = event.target;
