@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState }from 'react';
 import { BsStopwatch } from 'react-icons/bs';
-import AvatarImg from '../../static/images/B.svg';
+import AvatarImg from '../../../static/images/B.svg';
 import { GrLike, GrDislike } from 'react-icons/gr';
 import {
   ArticleWrap,
@@ -14,9 +14,18 @@ import {
   TopText,
   TopicFooter,
   LikeContainer,
+  Button
 } from './ArticleElements';
+import { IconContext } from 'react-icons/lib';
+
 
 const Article = (props) => {
+  const [islike, setIsLike ] = useState(null)
+
+  const handleLike = () => {
+    setIsLike((prevState)=> !prevState)
+  } 
+
   return (
     <ArticleWrap>
       <ArticleContainer>
@@ -38,11 +47,29 @@ const Article = (props) => {
         </TopText>
         <TopicFooter>
           <LikeContainer>
-            <GrDislike />
-            <span> {props.post.likes || '0'}</span>
+            <Button
+            onClick={handleLike}
+            >
+            <IconContext.Provider
+            value={{size:  islike === null ? '1.2em' : !islike ?  '1.5em': '1.2em'}}
+            >
+              <div>
+              <GrDislike />
+              </div>
+            </IconContext.Provider>
+            </Button>
+            <span>21</span>
           </LikeContainer>
           <LikeContainer>
-            <GrLike />
+            <Button
+            onClick={handleLike}
+            >
+            <IconContext.Provider 
+            value={{size: islike ? '1.5em': '1.2em'}}
+            >
+            <div><GrLike /></div>
+            </IconContext.Provider>
+            </Button>
             <span>08</span>
           </LikeContainer>
         </TopicFooter>

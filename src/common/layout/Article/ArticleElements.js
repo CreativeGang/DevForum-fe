@@ -90,4 +90,11 @@ export const LikeContainer = styles.div`
   width: 50px;
   // height: 50px;
   // background-color: blue;
-  `;
+  `
+
+export const Button = styles.button`
+  background-color: transparent;
+  height: 20px;
+  width: 40px;
+  border: none;
+  `
