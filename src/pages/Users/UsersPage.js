@@ -1,44 +1,30 @@
-import React from "react";
-import NavBar from '../../common/layout/Navbar/index'
-import Filter from '../../common/layout/Filter';
-import User from "./User";
-import './User.css'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import NavBar from '../../common/layout/Navbar/index';
 
-function UsersPage(){
+import User from './User';
+import { loadAllUsers, selectNumberOfPosts } from '../../store/users';
+import './User.css';
 
-    const fakeData = [{
-        username:'alex',
-        firstname:"json",
-        numOfPost:20,
-        image:'default-user.jpg',
-        program:['JavaScript','Java','PHP']
-    },{
-        username:'alex2',
-        firstname:"json2",
-        numOfPost:40,
-        image:'default-user.jpg',
-        program:['JavaScript','Java','PHP']
-    }]
+function UsersPage() {
+  const dispatch = useDispatch();
+  const users = useSelector(selectNumberOfPosts);
 
-    return(
-        <>
-            <NavBar/>
-            <Filter></Filter>
-            <div className="usersPart">
-                <User content={fakeData[0]}/>
-                <User content={fakeData[1]}/>
-                <User content={fakeData[0]}/>
-                <User content={fakeData[1]}/>
-                <User content={fakeData[0]}/>
-                
-                {fakeData.map((data,index)=>{
-                    return <User key={index} content={data}/>
-                })}
-            </div>
-            
-            
-        </>
-    )
+  useEffect(() => {
+    dispatch(loadAllUsers());
+  }, []);
+
+  return (
+    <>
+      <NavBar />
+
+      <div className='usersPart'>
+        {users.map((user) => {
+          return <User key={user._id} content={user} />;
+        })}
+      </div>
+    </>
+  );
 }
 
-export default  UsersPage;
+export default UsersPage;

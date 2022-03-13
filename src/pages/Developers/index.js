@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import UsersPage from '../Users/UsersPage';
 
 const Developers = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <UsersPage />
+    </>
+  );
+};
 
 export default Developers;
