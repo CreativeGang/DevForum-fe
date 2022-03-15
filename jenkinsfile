@@ -1,0 +1,98 @@
+pipeline {
+      agent {label 'FrontEndBuild_Agent_Ubuntu' }
+       
+//    options {}
+
+//    tools {}
+
+//    environment {}
+
+stages {
+    stage('Git Clone') {
+        steps {
+            script {
+                try {
+                    echo 'Git Cloning..'
+                    checkout([$class: 'GitSCM', branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/CreativeGang/DevForum-fe.git']]])
+                } catch (error) {
+                    print(error)
+                    env.cloneResult=false
+                    currentBuild.result = 'FAILURE'
+                }
+            }
+        }
+
+        post {
+            success {
+                echo "The Git Clone stage successfully."
+            }
+            failure {
+                echo "The Git Clone stage failed."
+            }
+        }
+    }
+    
+    stage('Build') {
+        steps {
+            script {
+                try{
+                    echo 'Installing packages .....'
+                    //Install the packages from package.json
+                    sh 'rm package-lock.json'
+                    sh 'npm i'
+            
+                    echo 'Building..'
+                    echo "Running job: ${env.JOB_NAME}\n Build: ${env.BUILD_ID} - ${env.BUILD_URL}\nPepeline: ${env.RUN_DISPLAY_URL}"
+                    sh 'CI=false npm run build'
+                } catch (error) {
+                    print(error)
+                    env.cloneResult=false
+                    currentBuild.result = 'FAILURE'
+                }
+            }
+            
+        }
+        
+        post {
+            success {
+                echo "The Build stage successfully."
+            }
+            failure {
+                echo "The Build stage failed."
+            }
+        }
+    }
+    
+    stage('Test') {
+        steps {
+            echo 'Testing..'
+            
+        }
+    }
+    stage('Deploy') {
+        steps {
+            script{
+                try{
+                    echo 'Deploying build to AWS S3....'
+                    sh 'npm run deploy'
+                } catch (error) {
+                    print(error)
+                    env.cloneResult=false
+                    echo 'Remove Deploy Files'
+                    sh 'rm -rf ~/p3/jenkins_agent/workspace/${env.JOB_NAME}/*'
+                    currentBuild.result = 'FAILURE'
+                }
+            }
+        }
+        post {
+            success {
+                echo "The Build stage successfully."
+            }
+            failure {
+                echo "The Build stage failed."
+            }
+        }
+    }
+}
+//    post {}
+} 
