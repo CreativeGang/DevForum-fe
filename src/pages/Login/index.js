@@ -4,7 +4,8 @@ import LoginForm from './components/LoginForm';
 import LoginImg from '../../static/images/signup_bgm.png';
 import Navbar from '../../common/layout/Navbar';
 import RegisterLoginFooter from '../../common/layout/RegisterLoginFooter';
-const Register = () => {
+
+const Login = () => {
   return (
     <LoginPage>
       <Navbar />
@@ -17,4 +18,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

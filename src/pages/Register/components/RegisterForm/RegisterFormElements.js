@@ -12,6 +12,7 @@ export const RegisterContent = styled.div`
   top: 0px;
   max-width: 770px;
   margin: 0 auto;
+  font-family: 'Nunito Sans', sans-serif;
   @media only screen and (min-width: 1241px) {
     width: 992px;
     max-width: 100%;

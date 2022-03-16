@@ -5,6 +5,7 @@ import alert from './alert';
 import auth from './auth';
 import posts from '../store/posts';
 import filter from '../store/filter';
+import profile from './profile';
 
 export default combineReducers({
   alert,
@@ -12,5 +13,6 @@ export default combineReducers({
   post,
   posts,
   filter,
+  profile
 
 });
