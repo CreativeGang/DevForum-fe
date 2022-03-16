@@ -15,8 +15,9 @@ import { PropTypes } from 'prop-types';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <NavMenu>
-      <NavButton to='/'>Developers</NavButton>
-      <NavButton onClick={logout} to='#!'>
+      <NavButton to="/dashboard">Dashboard</NavButton>
+      <NavButton to="/">Developers</NavButton>
+      <NavButton onClick={logout} to="#!">
         Logout
       </NavButton>
     </NavMenu>
@@ -34,7 +35,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <>
       <Nav>
-        <NavLink to='/'>DevForum</NavLink>
+        <NavLink to="/">DevForum</NavLink>
         {!loading && (
           <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         )}
