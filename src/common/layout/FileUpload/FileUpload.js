@@ -3,7 +3,7 @@ import Message from '../UploadAlert/Message';
 import Progress from '../ProgressBar/Progress';
 import { Buffer } from 'buffer';
 import axios from 'axios';
-// import downloadImage from '../Helper/downLoadImage';
+import { Link } from 'react-router-dom';
 
 const FileUpload = () => {
   const [file, setFile] = useState('');
@@ -19,7 +19,7 @@ const FileUpload = () => {
   };
   const loadPhoto = async () => {
     const response = await axios.get(
-      'http://localhost:3000/v1/users/get_user_photo',
+      process.env.REACT_APP_API_URL + '/v1/users/get_user_photo',
       {
         responseType: 'arraybuffer',
       }
@@ -34,7 +34,7 @@ const FileUpload = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:3000/v1/users/upload_photo',
+        process.env.REACT_APP_API_URL + '/v1/users/upload_photo',
         formData,
         {
           headers: {
@@ -56,8 +56,8 @@ const FileUpload = () => {
       const { fileName, filePath } = res.data;
 
       setUploadedFile({ fileName, filePath });
-
       setMessage('File Uploaded');
+      await loadPhoto();
     } catch (err) {
       setMessage(err.response.data.msg);
 
@@ -99,24 +99,38 @@ const FileUpload = () => {
         </div>
       ) : null}
 
-      <div className='container'>
-        <div className='row'>
-          <div className='col align-self-center'>
-            <button onClick={loadPhoto}> downloadImage </button>
-          </div>
-          {photo !== '' ? (
-            <div className='col align-self-center'>
-              <img
-                style={{ maxWidth: '300px', height: 'auto' }}
-                src={`data:;base64,${photo}`}
-                alt='UploadedPhoto'
-              />
-            </div>
-          ) : (
-            <p> No images</p>
-          )}
-        </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          marginBottom: '40px',
+        }}>
+        <Link to='/dashboard'>Go back to dashboard</Link>
       </div>
+
+      {photo ? (
+        <>
+          <div
+            className='alert alert-primary'
+            role='alert'
+            style={{
+              maxWidth: '250px',
+              margin: '0 auto',
+              textAlign: 'center',
+            }}>
+            <h1> profile photo updated !!</h1>
+          </div>
+
+          <img
+            className='img-fluid'
+            style={{ display: 'block', margin: '20px auto' }}
+            src={`data:;base64,${photo}`}
+            alt='UploadedPhoto'
+          />
+        </>
+      ) : (
+        ''
+      )}
     </Fragment>
   );
 };
