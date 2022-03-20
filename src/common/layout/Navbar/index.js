@@ -15,7 +15,8 @@ import { PropTypes } from 'prop-types';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <NavMenu>
-      <NavButton to='/'>Developers</NavButton>
+      <NavButton to='/dashboard'>Dashboard</NavButton>
+      <NavButton to='/users_page'>Developers</NavButton>
       <NavButton onClick={logout} to='#!'>
         Logout
       </NavButton>
