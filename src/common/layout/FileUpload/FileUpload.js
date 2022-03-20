@@ -10,6 +10,11 @@ const FileUpload = () => {
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
   const [photoURL, setPhotoURL] = useState('');
+  const [showAlert, setShowAlert] = useState(true);
+
+  const onClose = () => {
+    setShowAlert(!showAlert);
+  };
 
   const onChange = (e) => {
     setFile(e.target.files[0]);
@@ -40,9 +45,11 @@ const FileUpload = () => {
       );
 
       // Clear percentage
+      setShowAlert(true);
       setTimeout(() => setUploadPercentage(0), 5000);
       setPhotoURL(res.data.imagePath);
-      setMessage('File Uploaded');
+      setMessage(res.data.msg);
+
       // await loadPhoto();
     } catch (err) {
       setMessage(err.response.data.msg);
@@ -53,7 +60,7 @@ const FileUpload = () => {
 
   return (
     <Fragment>
-      {message ? <Message msg={message} /> : null}
+      {message && showAlert ? <Message msg={message} show={onClose} /> : null}
       <form onSubmit={onSubmit}>
         <div className='custom-file mb-4'>
           <input
