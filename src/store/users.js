@@ -39,7 +39,7 @@ export const selectNumberOfPosts = (state) => {
   const userWithPosts = state.user.list.map((aUser) => ({
     ...aUser,
     numOfPosts: aUser.posts.length,
-    image: 'default-user.jpg',
+    photo: aUser.photo || 'default-user.jpg',
   }));
 
   return userWithPosts;

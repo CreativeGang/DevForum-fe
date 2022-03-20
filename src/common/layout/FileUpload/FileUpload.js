@@ -1,30 +1,19 @@
 import React, { Fragment, useState } from 'react';
 import Message from '../UploadAlert/Message';
 import Progress from '../ProgressBar/Progress';
-import { Buffer } from 'buffer';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const FileUpload = () => {
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose File');
-  const [uploadedFile, setUploadedFile] = useState({});
   const [message, setMessage] = useState('');
   const [uploadPercentage, setUploadPercentage] = useState(0);
-  const [photo, setPhoto] = useState('');
+  const [photoURL, setPhotoURL] = useState('');
 
   const onChange = (e) => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
-  };
-  const loadPhoto = async () => {
-    const response = await axios.get(
-      process.env.REACT_APP_API_URL + '/v1/users/get_user_photo',
-      {
-        responseType: 'arraybuffer',
-      }
-    );
-    setPhoto(Buffer.from(response.data, 'binary').toString('base64'));
   };
 
   const onSubmit = async (e) => {
@@ -53,11 +42,9 @@ const FileUpload = () => {
       // Clear percentage
       setTimeout(() => setUploadPercentage(0), 5000);
 
-      const { fileName, filePath } = res.data;
-
-      setUploadedFile({ fileName, filePath });
+      setPhotoURL(res.data.imagePath);
       setMessage('File Uploaded');
-      await loadPhoto();
+      // await loadPhoto();
     } catch (err) {
       setMessage(err.response.data.msg);
 
@@ -90,25 +77,18 @@ const FileUpload = () => {
           className='btn btn-primary btn-block mt-4'
         />
       </form>
-      {uploadedFile ? (
-        <div className='row mt-5'>
-          <div className='col-md-6 m-auto'>
-            <h3 className='text-center'>{uploadedFile.fileName}</h3>
-            <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
-          </div>
-        </div>
-      ) : null}
 
       <div
         style={{
           display: 'flex',
           justifyContent: 'flex-start',
           marginBottom: '40px',
+          marginTop: '20px',
         }}>
         <Link to='/dashboard'>Go back to dashboard</Link>
       </div>
 
-      {photo ? (
+      {photoURL ? (
         <>
           <div
             className='alert alert-primary'
@@ -124,7 +104,7 @@ const FileUpload = () => {
           <img
             className='img-fluid'
             style={{ display: 'block', margin: '20px auto' }}
-            src={`data:;base64,${photo}`}
+            src={photoURL}
             alt='UploadedPhoto'
           />
         </>
