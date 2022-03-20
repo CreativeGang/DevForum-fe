@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Message = ({ msg }) => {
-  const [display, setDisplay] = useState({ display: 'block' });
+  const [showAlert, setShowAlert] = useState(true);
   let alertStyle = 'alert alert-info alert-dismissible fade show ';
   alertStyle += msg.includes('problem') ? 'alert-danger' : 'alert-success';
+  let alterDisplay = { display: showAlert ? 'block' : 'none' };
   return (
-    <div className={alertStyle} role='alert' style={display}>
+    <div className={alertStyle} role='alert' style={alterDisplay}>
       {msg}
       <button
-        onClick={() => setDisplay({ display: 'none' })}
+        onClick={() => setShowAlert(!showAlert)}
         type='button'
         className='close'
         data-dismiss='alert'

@@ -41,7 +41,6 @@ const FileUpload = () => {
 
       // Clear percentage
       setTimeout(() => setUploadPercentage(0), 5000);
-
       setPhotoURL(res.data.imagePath);
       setMessage('File Uploaded');
       // await loadPhoto();
