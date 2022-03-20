@@ -12,7 +12,7 @@ function UsersPage() {
 
   useEffect(() => {
     dispatch(loadAllUsers());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

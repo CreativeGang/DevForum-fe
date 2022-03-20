@@ -5,7 +5,12 @@ function User({ content }) {
     <div className='userPart'>
       <div className='userPart_img'>
         <img
-          src={require(`../../static/images/${content.image}`)}
+          className='rounded-circle'
+          src={
+            content.photo === 'default-user.jpg'
+              ? require(`../../static/images/${content.photo}`)
+              : content.photo
+          }
           alt='user-image'></img>
       </div>
       <div className='userPart__details'>

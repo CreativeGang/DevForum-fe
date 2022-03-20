@@ -4,12 +4,16 @@ import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profile';
 // import Spinner from '../../common/layout/SpinnerGraphic'
 import Spinner from '../../common/layout/SpinnerGraphic';
-import { DashboardHeader, DashboardGreeting, GreetingContent, Name,
-
-  WelcomeWord, 
- } from './DashboardElements';
+import {
+  DashboardHeader,
+  DashboardGreeting,
+  GreetingContent,
+  Name,
+  WelcomeWord,
+} from './DashboardElements';
 import CreateProfileForm from './components/CreateProfileForm';
 import NavBar from '../../common/layout/Navbar';
+import { Link } from 'react-router-dom';
 import DashboardAction from './components/DashboardAction';
 const Dashboard = ({
   getCurrentProfile,
@@ -31,13 +35,13 @@ const Dashboard = ({
       <DashboardHeader>
         <DashboardGreeting>
           <GreetingContent>
-            <Name>
-            Welcome {user && user.name}
-            </Name>
+            <Name>Welcome {user && user.name}</Name>
           </GreetingContent>
         </DashboardGreeting>
       </DashboardHeader>
       <WelcomeWord>Welcome {user && user.name}</WelcomeWord>
+
+      <Link to='/upload'>Upload your Profile Photo</Link>
 
       {profile !== null ? (
         <Fragment>
