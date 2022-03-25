@@ -138,7 +138,7 @@ export const SignUpLabel = styled.label`
 export const SignUpInput = styled.input`
   &::placeholder {
     font-weight: 300;
-    color:#f1bd72;
+    color: #f1bd72;
     font-size: 0.8rem;
   }
   display: block;
