@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import {
-  ProfileItemWrapper,
   ProfileItemContainer,
   ProfilePhoto,
   ProfileInfo,
@@ -40,7 +38,10 @@ const ProfileItem = ({
       </ProfileInfo>
       <SkillsContainer>
         {skills.slice(0, 4).map((skill, index) => (
-          <Skill key={index}><SkillTick/>{skill}</Skill>
+          <Skill key={index}>
+            <SkillTick />
+            {skill}
+          </Skill>
         ))}
       </SkillsContainer>
     </ProfileItemContainer>

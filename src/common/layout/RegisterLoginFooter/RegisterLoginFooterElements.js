@@ -75,22 +75,22 @@ export const FooterMenu = styled.ul`
 `;
 
 export const FooterMenuItem = styled.li`
-@media only screen and (min-width: 1040px){
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
-};
-@media only screen and (max-width: 1039px){
+  @media only screen and (min-width: 1040px) {
     &:not(:last-child) {
       margin-right: 30px;
     }
-  };
-  @media only screen and (max-width: 400px){
+  }
+  @media only screen and (max-width: 1039px) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  @media only screen and (max-width: 400px) {
     &:not(:last-child) {
       margin-right: 10px;
     }
-  };
-  `;
+  } ;
+`;
 
 export const FooterLink = styled(Link)`
   &:visited,

@@ -1,7 +1,6 @@
-import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const PropMessage = styled.p``
+export const PropMessage = styled.p``;
 
-export const CreateProfileLink = styled(Link)`
-`
+export const CreateProfileLink = styled(Link)``;

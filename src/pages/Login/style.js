@@ -7,11 +7,12 @@ export const LoginPage = styled.div`
   &::before {
     display: table;
     content: ' ';
-  };
+  }
   &::after {
     content: ' ';
-  };
+  }
 `;
+
 export const LoginWrapper = styled.div`
   position: relative;
   font-family: 'Nunito Sans', sans-serif;

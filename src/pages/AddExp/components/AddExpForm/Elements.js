@@ -122,12 +122,13 @@ export const DateInput = styled.input.attrs({
 })`
   outline: none;
 `;
+
 export const CheckBox = styled.input.attrs({
   type: 'checkbox',
 })``;
 
 export const PropMsg = styled.small`
-  color:#f1bd72;
+  color: #f1bd72;
   padding: 10px 0;
   margin-top: 5px;
   display: block;
@@ -275,7 +276,7 @@ export const SignUpLabel = styled.label`
 export const SignUpInput = styled.input`
   &::placeholder {
     font-weight: 300;
-    color:#f1bd72;
+    color: #f1bd72;
     font-size: 0.8rem;
   }
   display: block;
@@ -310,6 +311,7 @@ export const SingUpTwoColumnSection = styled.div`
     align-items: stretch;
   } ;
 `;
+
 export const PasswordWrapper = styled.div`
   position: relative;
 `;

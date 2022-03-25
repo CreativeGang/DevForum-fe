@@ -18,10 +18,10 @@ import PrivateRoute from './common/routing/PrivateRoute';
 import UsersPage from './pages/Users/UsersPage';
 import uploadFile from './pages/UploadFile';
 import EditProfile from './pages/EditProfile';
-import AddExperience from './pages/AddExp'
+import AddExperience from './pages/AddExp';
 import AddEducation from './pages/AddEdu';
-import Profiles from './pages/Profiles'
-import Profile from './pages/Profile'
+import Profiles from './pages/Profiles';
+import Profile from './pages/Profile';
 
 if (localStorage.getItem('token')) {
   setAuthToken(localStorage.getItem('token'));
@@ -38,21 +38,37 @@ const App = () => {
           <section>
             <Alert />
             <Switch>
-              <Route exact path='/' component={HomePage} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/profiles' component = {Profiles}/>
-              <Route exact path='/profile/:id' component = {Profile}/>
-              <Route path='/article/:id' component={Article}></Route>
-              <Route path='/posts' component={PublicPost}></Route>
-              <Route path='/create_post' component={Post}></Route>
-              <PrivateRoute exact path='/upload'component={uploadFile}/>
-              <PrivateRoute exact path ='/create_profile' component={CreateProfile}/>
-              <PrivateRoute exact path ='/dashboard' component={Dashboard}/>
-              <PrivateRoute exact path = '/edit_profile' component={EditProfile}/>
-              <PrivateRoute exact path = '/add_experience' component={AddExperience}/>
-              <PrivateRoute exact path = '/add_education' component={AddEducation}/>
-              <Route path='/users_page' component={UsersPage}></Route>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:id" component={Profile} />
+              <Route path="/article/:id" component={Article}></Route>
+              <Route path="/posts" component={PublicPost}></Route>
+              <Route path="/create_post" component={Post}></Route>
+              <PrivateRoute exact path="/upload" component={uploadFile} />
+              <PrivateRoute
+                exact
+                path="/create_profile"
+                component={CreateProfile}
+              />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute
+                exact
+                path="/edit_profile"
+                component={EditProfile}
+              />
+              <PrivateRoute
+                exact
+                path="/add_experience"
+                component={AddExperience}
+              />
+              <PrivateRoute
+                exact
+                path="/add_education"
+                component={AddEducation}
+              />
+              <Route path="/users_page" component={UsersPage}></Route>
             </Switch>
           </section>
         </Fragment>

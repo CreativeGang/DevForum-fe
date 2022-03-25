@@ -1,13 +1,13 @@
-import React from 'react'
-import NavBar from '../../common/layout/Navbar/index'
-import PublicPost from '../PublicPost'
+import React from 'react';
+import NavBar from '../../common/layout/Navbar/index';
+import PublicPost from '../PublicPost';
 const Homepage = () => {
   return (
     <>
-      <NavBar/>
-      <PublicPost/>
+      <NavBar />
+      <PublicPost />
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

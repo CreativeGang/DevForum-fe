@@ -25,7 +25,6 @@ export const DashboardGreeting = styled.div`
   @media (min-width: 576px) {
     max-width: 540px;
   }
-
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -62,12 +61,10 @@ export const DashboardTitle = styled.p`
   margin-bottom: 20px;
   border-bottom: solid 1px #e9ecee;
   align-items: center;
-
   display: flex;
 `;
 export const WelcomeIcon = styled(FaUser)`
-color: #5db5bb;
-
+  color: #5db5bb;
   margin-right: 3px;
 `;
 export const WelcomeWord = styled.p`
@@ -124,7 +121,6 @@ export const PersonalBackgroundWrapper = styled.div`
 export const PersonalBackgroundContainer = styled.div`
   background-color: #ffffff;
   border: solid 1px #f3f4f5;
-
   @media only screen and (min-width: 1040px) {
     padding: 20px 30px 30px;
     margin-top: 44px;
@@ -134,28 +130,27 @@ export const PersonalBackgroundContainer = styled.div`
     margin-top: 15px;
   }
 `;
+
 export const EduExpContainer = styled.div`
   margin-right: auto;
   margin-left: auto;
   padding-top: 50px;
   display: flex;
-  @media only screen and (min-width: 480px){
+  @media only screen and (min-width: 480px) {
     flex-direction: column;
-}
+  }
 `;
 
 export const DeleteSection = styled.div`
-margin-top: 3vh;
+  margin-top: 3vh;
 `;
 
 export const DeleteButton = styled.button`
-outline: none;
-padding: 5px 10px;
-background-color: #eb3223;
-outline: none;
-border: none;
-color: #fff;
-border-radius: 3px;
+  outline: none;
+  padding: 5px 10px;
+  background-color: #eb3223;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
 `;
-
-

@@ -1,9 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { AddEducation} from '../../../../actions/profile';
-import {useHistory } from 'react-router-dom';
-
+import { AddEducation } from '../../../../actions/profile';
+import { useHistory } from 'react-router-dom';
 import {
   AddProfileWrapper,
   AddProfileContainer,
@@ -25,7 +24,7 @@ import {
 } from './Elements';
 import NewProfileIcon from '../../../../static/images/New_Topic.svg';
 
-const AddEducationForm = ({AddEducation}) => {
+const AddEducationForm = ({ AddEducation }) => {
   const [formData, setFormData] = useState({
     school: '',
     degree: '',
@@ -36,8 +35,9 @@ const AddEducationForm = ({AddEducation}) => {
     description: '',
   });
   const [toDateDisabled, toggletoDateDisabled] = useState(false);
-  const { school, degree, fieldofstudy, from, to, current, description } = formData;
-  let history = useHistory()
+  const { school, degree, fieldofstudy, from, to, current, description } =
+    formData;
+  let history = useHistory();
 
   const handleFieldChange = (e) =>
     setFormData({
@@ -56,10 +56,12 @@ const AddEducationForm = ({AddEducation}) => {
           <FormGuidlines>Forum Guidelines</FormGuidlines>
         </AddProfileHeader>
         <PropMsg>* = Required Field</PropMsg>
-        <ProfileForm onSubmit= {e=> {
-          e.preventDefault();
-          AddEducation(formData, history)
-        }}>
+        <ProfileForm
+          onSubmit={(e) => {
+            e.preventDefault();
+            AddEducation(formData, history);
+          }}
+        >
           <SingleRowSection>
             <SingleRowInput
               name="school"
@@ -78,7 +80,6 @@ const AddEducationForm = ({AddEducation}) => {
               value={degree}
               onChange={(e) => handleFieldChange(e)}
             />
-    
           </SingleRowSection>
           <SingleRowSection>
             <SingleRowInput
@@ -113,8 +114,8 @@ const AddEducationForm = ({AddEducation}) => {
                   });
                   toggletoDateDisabled(!toDateDisabled);
                 }}
-              />
-              {' '}Current
+              />{' '}
+              Current
             </FieldLabel>
             <PropMsg>Click if you are currently work as this</PropMsg>
           </SingleRowSection>
@@ -122,10 +123,10 @@ const AddEducationForm = ({AddEducation}) => {
             <FieldLabel>To Date</FieldLabel>
             <DateInput
               name="to"
-              value={to} 
+              value={to}
               placeholder="mm/dd/yyyy"
               onChange={(e) => handleFieldChange(e)}
-              disabled = {toDateDisabled ? 'disabled': ''}
+              disabled={toDateDisabled ? 'disabled' : ''}
             />
             <PropMsg>Your end Date (eg. 01/01/2022)</PropMsg>
           </SingleRowSection>

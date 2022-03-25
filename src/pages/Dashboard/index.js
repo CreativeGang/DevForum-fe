@@ -2,14 +2,8 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
-
-// import Spinner from '../../common/layout/SpinnerGraphic'
 import Spinner from '../../common/layout/SpinnerGraphic';
 import {
-  DashboardHeader,
-  DashboardGreeting,
-  GreetingContent,
-  Name,
   WelcomeWord,
   PersonalBackgroundWrapper,
   EduExpContainer,
@@ -22,7 +16,6 @@ import {
 } from './DashboardElements';
 import CreateProfileForm from './components/CreateProfileForm';
 import NavBar from '../../common/layout/Navbar';
-import { Link } from 'react-router-dom';
 import DashboardAction from './components/DashboardAction';
 import Experience from './components/Experiences';
 import Education from './components/Education';

@@ -10,7 +10,7 @@ import {
   FooterSocialItem,
 } from './RegisterLoginFooterElements';
 
-import { BsFacebook, BsTwitter,BsGoogle } from 'react-icons/bs';
+import { BsFacebook, BsTwitter, BsGoogle } from 'react-icons/bs';
 
 const RegisterLoginFooter = () => {
   return (

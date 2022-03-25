@@ -116,6 +116,7 @@ export const ExpTitle = styled.p`
   font-size: 1.5em;
   font-weight: bold;
 `;
+
 export const ExpContainer = styled.div`
   color: #333;
   font-size: 1rem;
@@ -140,6 +141,7 @@ export const EduTitle = styled.p`
   font-size: 1.5em;
   font-weight: bold;
 `;
+
 export const EduContainer = styled.div`
   color: #333;
   font-size: 1rem;

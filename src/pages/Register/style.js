@@ -7,11 +7,11 @@ export const RegisterPage = styled.div`
   &::before {
     display: table;
     content: ' ';
-  };
+  }
   &::after {
     display: table;
     content: ' ';
-  };
+  }
 `;
 
 export const RegisterWrapper = styled.div`
@@ -20,16 +20,16 @@ export const RegisterWrapper = styled.div`
   &::before {
     display: table;
     content: ' ';
-  };
+  }
   &::after {
     display: table;
     content: ' ';
     clear: both;
-  };
+  }
   @media only screen and (max-width: 1400px) {
     padding-top: 30px;
     height: 1060px;
-  };
+  } ;
 `;
 
 export const RegisterBgm = styled.img`
@@ -40,5 +40,5 @@ export const RegisterBgm = styled.img`
   max-height: 1122px;
   @media only screen and (max-width: 1039px) {
     display: none;
-  };
+  } ;
 `;

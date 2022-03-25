@@ -1,8 +1,8 @@
-import React, { useState, Fragment, useEffect} from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../../../actions/profile';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   AddProfileWrapper,
@@ -35,7 +35,11 @@ import {
 } from './Elements';
 import NewProfileIcon from '../../../../static/images/New_Topic.svg';
 
-const EditProfileForm = ({ createProfile, getCurrentProfile, profile: {profile, loading}}) => {
+const EditProfileForm = ({
+  createProfile,
+  getCurrentProfile,
+  profile: { profile, loading },
+}) => {
   const [formData, setFormData] = useState({
     company: '',
     website: '',
@@ -68,22 +72,23 @@ const EditProfileForm = ({ createProfile, getCurrentProfile, profile: {profile, 
   let history = useHistory();
   const [displaySocial, ToggleDisplaySocial] = useState(false);
   useEffect(() => {
-    getCurrentProfile()
+    getCurrentProfile();
     setFormData({
       company: loading || !profile.company ? '' : profile.company,
       website: loading || !profile.website ? '' : profile.website,
       loacation: loading || !profile.loacation ? '' : profile.loacation,
       status: loading || !profile.status ? '' : profile.status,
       skills: loading || !profile.skills ? '' : profile.skills.toString(),
-      githubusername: loading || !profile.githubusername ? '' : profile.githubusername,
+      githubusername:
+        loading || !profile.githubusername ? '' : profile.githubusername,
       bio: loading || !profile.bio ? '' : profile.bio,
       twitter: loading || !profile.social ? '' : profile.social.twitter,
       facebook: loading || !profile.social ? '' : profile.social.facebook,
       linkedin: loading || !profile.social ? '' : profile.social.linkedin,
       youtube: loading || !profile.social ? '' : profile.social.youtube,
       instagram: loading || !profile.social ? '' : profile.social.instagram,
-    })
-  }, [loading, getCurrentProfile])
+    });
+  }, [loading, getCurrentProfile]);
   const handleFieldChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -291,8 +296,10 @@ EditProfileForm.propTypes = {
   profile: PropTypes.object.isRequired,
 };
 
-const mapStateToProps  = (state)=> ({
-  profile: state.profile
+const mapStateToProps = (state) => ({
+  profile: state.profile,
 });
 
-export default connect(mapStateToProps, {createProfile, getCurrentProfile})((EditProfileForm));
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
+  EditProfileForm
+);

@@ -32,6 +32,7 @@ export const LoginContent = styled.div`
     padding-top: 37px;
   } ;
 `;
+
 export const LoginLogoWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -74,6 +75,7 @@ export const Intro = styled.div`
     border-top: solid 1px #dadde1;
   }
 `;
+
 export const IntroTitle = styled.h3`
   font-size: clamp(1rem, 2vw, 5rem);
   margin: 0;
@@ -119,7 +121,7 @@ export const LoginLabel = styled.label`
 export const LoginInput = styled.input`
   &::placeholder {
     font-weight: 300;
-    color:#f1bd72;
+    color: #f1bd72;
     font-size: 0.8rem;
   }
   display: block;

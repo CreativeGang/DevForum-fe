@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import Spinner from '../../common/layout/SpinnerGraphic';
 import { getProfileById } from '../../actions/profile';
 import NavBar from '../../common/layout/Navbar';
-import ProfileBanner from './components/ProfileBanner'
-import ProfileAbout from './components/ProfileAbout'
+import ProfileBanner from './components/ProfileBanner';
+import ProfileAbout from './components/ProfileAbout';
 import ProfileExp from './components/ProfileExp';
-import ProfileEdu  from './components/ProfileEdu'
-import ProfileGithub  from './components/ProfileGithub'
+import ProfileEdu from './components/ProfileEdu';
+import ProfileGithub from './components/ProfileGithub';
 
 import {
   ProfileLink,
@@ -22,8 +22,7 @@ import {
   EduWrapper,
   EduTitle,
   EduContainer,
-  EduMsg
-  
+  EduMsg,
 } from './Elements';
 const Profile = ({
   getProfileById,
@@ -45,40 +44,43 @@ const Profile = ({
           <Fragment>
             <ProfileLink to="/profiles">Go Back to Profiles</ProfileLink>
             {auth.isAuthenticated &&
-                auth.loading === false &&
-                auth.user._id === profile.user._id && (
-                  <ProfileLink to="/edit_profile">Edit Profile</ProfileLink>
-                )}
+              auth.loading === false &&
+              auth.user._id === profile.user._id && (
+                <ProfileLink to="/edit_profile">Edit Profile</ProfileLink>
+              )}
             <ProfileContainer>
-                  <ProfileBanner profile = {profile}/>
-                  <ProfileAbout profile = {profile}/>
-                  <ExpWrapper>
-                    <ExpTitle>Experience</ExpTitle>
-                    {profile.experience.length > 0 ? (<ExpContainer>
-                        {profile.experience.map(experience => (
-                          <ProfileExp key ={experience._id} experience = {experience}/>
-                        ))}
-                    </ExpContainer>
-                    ) : (<ExpMsg>
-                      No Experience Credientials
-                    </ExpMsg>)}
-                  </ExpWrapper>
-                 <EduWrapper>
-                   <EduTitle>
-                     Education
-                   </EduTitle>
-                   {profile.education.length > 0 ? (<EduContainer>
-                     {profile.education.map(education => (
-                       <ProfileEdu key = {education._id} education = {education}/>
-                     ))}
-                   </EduContainer>) : (<EduMsg>
-                     No Education Credientials
-                   </EduMsg>)}
-                 </EduWrapper>
-                 {profile.githubusername && (
-                   <ProfileGithub username= {profile.githubusername}/>
-                 )}
-              
+              <ProfileBanner profile={profile} />
+              <ProfileAbout profile={profile} />
+              <ExpWrapper>
+                <ExpTitle>Experience</ExpTitle>
+                {profile.experience.length > 0 ? (
+                  <ExpContainer>
+                    {profile.experience.map((experience) => (
+                      <ProfileExp
+                        key={experience._id}
+                        experience={experience}
+                      />
+                    ))}
+                  </ExpContainer>
+                ) : (
+                  <ExpMsg>No Experience Credientials</ExpMsg>
+                )}
+              </ExpWrapper>
+              <EduWrapper>
+                <EduTitle>Education</EduTitle>
+                {profile.education.length > 0 ? (
+                  <EduContainer>
+                    {profile.education.map((education) => (
+                      <ProfileEdu key={education._id} education={education} />
+                    ))}
+                  </EduContainer>
+                ) : (
+                  <EduMsg>No Education Credientials</EduMsg>
+                )}
+              </EduWrapper>
+              {profile.githubusername && (
+                <ProfileGithub username={profile.githubusername} />
+              )}
             </ProfileContainer>
           </Fragment>
         )}

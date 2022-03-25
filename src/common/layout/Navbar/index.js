@@ -26,18 +26,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <NavMenu>
-      <NavButton to='/users_page'>Developers</NavButton>
+      <NavButton to="/users_page">Developers</NavButton>
       <NavButton to="/profiles">Profiles</NavButton>
-      <NavButton to='/posts'>Posts</NavButton>
-      <NavButton to='/register'>Register</NavButton>
-      <NavButton to='/login'>Log in</NavButton>
+      <NavButton to="/posts">Posts</NavButton>
+      <NavButton to="/register">Register</NavButton>
+      <NavButton to="/login">Log in</NavButton>
     </NavMenu>
   );
 
   return (
     <>
       <Nav>
-        <NavLink to='/'>DevForum</NavLink>
+        <NavLink to="/">DevForum</NavLink>
         {!loading && (
           <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         )}

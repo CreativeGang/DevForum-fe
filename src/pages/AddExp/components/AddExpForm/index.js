@@ -1,9 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addExperience } from '../../../../actions/profile';
-import {useHistory } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 import {
   AddProfileWrapper,
   AddProfileContainer,
@@ -25,7 +24,7 @@ import {
 } from './Elements';
 import NewProfileIcon from '../../../../static/images/New_Topic.svg';
 
-const AddExperienceForm = ({addExperience}) => {
+const AddExperienceForm = ({ addExperience }) => {
   const [formData, setFormData] = useState({
     company: '',
     title: '',
@@ -37,14 +36,12 @@ const AddExperienceForm = ({addExperience}) => {
   });
   const [toDateDisabled, toggletoDateDisabled] = useState(false);
   const { company, title, location, from, to, current, description } = formData;
-  let history = useHistory()
-
+  let history = useHistory();
   const handleFieldChange = (e) =>
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-
   return (
     <AddProfileWrapper>
       <AddProfileContainer>
@@ -55,10 +52,12 @@ const AddExperienceForm = ({addExperience}) => {
           </FormTitle>
           <FormGuidlines>Forum Guidelines</FormGuidlines>
         </AddProfileHeader>
-        <ProfileForm onSubmit= {e=> {
-          e.preventDefault();
-          addExperience(formData, history)
-        }}>
+        <ProfileForm
+          onSubmit={(e) => {
+            e.preventDefault();
+            addExperience(formData, history);
+          }}
+        >
           <SingleRowSection>
             <SingleRowInput
               name="title"
@@ -111,8 +110,8 @@ const AddExperienceForm = ({addExperience}) => {
                   });
                   toggletoDateDisabled(!toDateDisabled);
                 }}
-              />
-              {' '}Current
+              />{' '}
+              Current
             </FieldLabel>
             <PropMsg>Click if you are currently work as this</PropMsg>
           </SingleRowSection>
@@ -120,10 +119,10 @@ const AddExperienceForm = ({addExperience}) => {
             <FieldLabel>To Date</FieldLabel>
             <DateInput
               name="to"
-              value={to} 
+              value={to}
               placeholder="mm/dd/yyyy"
               onChange={(e) => handleFieldChange(e)}
-              disabled = {toDateDisabled ? 'disabled': ''}
+              disabled={toDateDisabled ? 'disabled' : ''}
             />
             <PropMsg>Your end Date (eg. 01/01/2022)</PropMsg>
           </SingleRowSection>
