@@ -14,7 +14,7 @@ const DashboardAction = () => {
         <ProfileIcon />
         Edit Profile
       </DashbaordButton>
-      <DashbaordButton to="/add_expegrience">
+      <DashbaordButton to="/add_experience">
         <ExpIcon />
         Add Experience
       </DashbaordButton>
