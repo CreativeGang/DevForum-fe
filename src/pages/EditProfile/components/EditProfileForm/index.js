@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect} from 'react';
 
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../../../actions/profile';
@@ -34,7 +34,8 @@ import {
   GoBackLink,
 } from './Elements';
 import NewProfileIcon from '../../../../static/images/New_Topic.svg';
-const AddProfileForm = ({ createProfile, getCurrentProfile, profile: {profile, loading}}) => {
+
+const EditProfileForm = ({ createProfile, getCurrentProfile, profile: {profile, loading}}) => {
   const [formData, setFormData] = useState({
     company: '',
     website: '',
@@ -65,13 +66,30 @@ const AddProfileForm = ({ createProfile, getCurrentProfile, profile: {profile, l
     instagram,
   } = formData;
   let history = useHistory();
-  const [displaySocial, ToggleDisplaySocial] = useState(true);
+  const [displaySocial, ToggleDisplaySocial] = useState(false);
+  useEffect(() => {
+    getCurrentProfile()
+    setFormData({
+      company: loading || !profile.company ? '' : profile.company,
+      website: loading || !profile.website ? '' : profile.website,
+      loacation: loading || !profile.loacation ? '' : profile.loacation,
+      status: loading || !profile.status ? '' : profile.status,
+      skills: loading || !profile.skills ? '' : profile.skills.toString(),
+      githubusername: loading || !profile.githubusername ? '' : profile.githubusername,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      twitter: loading || !profile.social ? '' : profile.social.twitter,
+      facebook: loading || !profile.social ? '' : profile.social.facebook,
+      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
+      youtube: loading || !profile.social ? '' : profile.social.youtube,
+      instagram: loading || !profile.social ? '' : profile.social.instagram,
+    })
+  }, [loading, getCurrentProfile])
   const handleFieldChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, history, true);
   };
   return (
     <AddProfileWrapper>
@@ -267,14 +285,14 @@ const AddProfileForm = ({ createProfile, getCurrentProfile, profile: {profile, l
   );
 };
 
-AddProfile.propTypes = {
+EditProfileForm.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
 };
 
-const mapStateToProps  = state = ({
+const mapStateToProps  = (state)=> ({
   profile: state.profile
-})
+});
 
-export default connect(mapStateToProps, { createProfile, getCurrentProfile })((AddProfileForm));
+export default connect(mapStateToProps, {createProfile, getCurrentProfile})((EditProfileForm));

@@ -65,7 +65,7 @@ const AddProfileForm = ({ createProfile }) => {
     instagram,
   } = formData;
   let history = useHistory();
-  const [displaySocial, ToggleDisplaySocial] = useState(true);
+  const [displaySocial, ToggleDisplaySocial] = useState(false);
   const handleFieldChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

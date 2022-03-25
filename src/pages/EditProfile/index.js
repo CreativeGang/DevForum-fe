@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import NavBar from '../../common/layout/Navbar'
 import {PageWrapper} from './Elements'
-
+import EditProfileForm from './components/EditProfileForm'
 const EditProfile = props => {
   const [formData, setFormDate] = useState({
     company: '',
@@ -41,7 +41,7 @@ const EditProfile = props => {
   )
 }
 
-CreateProfile.propTypes = {
+EditProfile.propTypes = {
 
 }
 

@@ -1,10 +1,11 @@
 import React from 'react'
 import NavBar from '../../common/layout/Navbar/index'
-import Article from '../../common/layout/Article/index'
+import PublicPost from '../PublicPost'
 const Homepage = () => {
   return (
     <>
       <NavBar/>
+      <PublicPost/>
     </>
   )
 }

@@ -18,9 +18,7 @@ const PublicPost = () => {
   return (
     <>
       <PublicPostPage>
-        <Navbar />
         <Filter />
-
         <NavButton to='/create_post'>Post</NavButton>
         <PostWrapper>
           {posts.map((post) => (

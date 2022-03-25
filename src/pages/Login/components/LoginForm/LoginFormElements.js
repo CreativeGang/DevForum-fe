@@ -119,7 +119,7 @@ export const LoginLabel = styled.label`
 export const LoginInput = styled.input`
   &::placeholder {
     font-weight: 300;
-    color: #f1bd72;
+    color:#f1bd72;
     font-size: 0.8rem;
   }
   display: block;

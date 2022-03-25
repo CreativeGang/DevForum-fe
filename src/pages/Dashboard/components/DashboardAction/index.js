@@ -1,13 +1,22 @@
 import React from 'react'
-import {DashbaordButtonsWrapper, DashbaordButton} from './Elements'
+import {DashbaordButtonsWrapper, DashbaordButton,
+  ExpIcon,
+  EducationIcon,
+  ProfileIcon
+} from './Elements'
 
 const DashboardAction = () => {
   return (
     <DashbaordButtonsWrapper>
       <DashbaordButton to = '/edit_profile'>
-        Edit Profile
+        <ProfileIcon/>Edit Profile
       </DashbaordButton>
-
+      <DashbaordButton to = '/add_experience'>
+        <ExpIcon/>Add Experience
+      </DashbaordButton>
+      <DashbaordButton to = '/add_education'>
+        <EducationIcon/>Add Education
+      </DashbaordButton>
     </DashbaordButtonsWrapper>
   )
 }
