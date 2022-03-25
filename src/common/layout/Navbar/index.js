@@ -28,7 +28,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <NavMenu>
       <NavButton to="/users_page">Developers</NavButton>
       <NavButton to="/profiles">Profiles</NavButton>
-      <NavButton to="/posts">Posts</NavButton>
       <NavButton to="/register">Register</NavButton>
       <NavButton to="/login">Log in</NavButton>
     </NavMenu>
