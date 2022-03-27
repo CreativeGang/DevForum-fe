@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({ msg }) => {
-  const [showAlert, setShowAlert] = useState(true);
+const Message = ({ msg, show }) => {
   let alertStyle = 'alert alert-info alert-dismissible fade show ';
   alertStyle += msg.includes('problem') ? 'alert-danger' : 'alert-success';
-  let alterDisplay = { display: showAlert ? 'block' : 'none' };
+
   return (
-    <div className={alertStyle} role='alert' style={alterDisplay}>
+    <div className={alertStyle} role='alert'>
       {msg}
       <button
-        onClick={() => setShowAlert(!showAlert)}
+        onClick={show}
         type='button'
         className='close'
         data-dismiss='alert'
@@ -23,6 +22,7 @@ const Message = ({ msg }) => {
 
 Message.propTypes = {
   msg: PropTypes.string.isRequired,
+  show: PropTypes.func.isRequired,
 };
 
 export default Message;
