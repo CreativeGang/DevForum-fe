@@ -54,7 +54,7 @@ const Dashboard = ({
                 <Education education={profile.education} />
               </EduExpContainer>
               <DeleteSection>
-                <DeleteButton onClick={() => deleteAccount()}>
+                <DeleteButton onClick={deleteAccount}>
                   Delete My Account
                 </DeleteButton>
               </DeleteSection>
