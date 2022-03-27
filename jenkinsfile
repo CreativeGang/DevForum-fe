@@ -69,6 +69,30 @@ stages {
             
         }
     }
+
+    stage('Backup') {
+        steps {
+            script{
+                try{
+                    echo 'Backup the old build to AWS S3 backup bucket....'
+                    sh ' aws s3 sync s3://jrp3-creativegang-frontend s3://jrp3-creativegang-frontend-backup'
+                } catch (error) {
+                    print(error)
+                    env.cloneResult=false
+                    currentBuild.result = 'FAILURE'
+                }
+            }
+        }
+        post {
+            success {
+                echo "The Backup stage successfully."
+            }
+            failure {
+                echo "The Backup stage failed."
+            }
+        }
+    }
+
     stage('Deploy') {
         steps {
             script{
@@ -86,10 +110,10 @@ stages {
         }
         post {
             success {
-                echo "The Build stage successfully."
+                echo "The Deploy stage successfully."
             }
             failure {
-                echo "The Build stage failed."
+                echo "The Deploy stage failed."
             }
         }
     }
