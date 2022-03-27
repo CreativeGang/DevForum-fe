@@ -102,6 +102,7 @@ export const NavText = styled(Link)`
     max-width: 100%;
   } ;
 `;
+
 export const NavLoginButton = styled(Link)`
 font-weight: 300;
 height： 1rem;

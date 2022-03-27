@@ -61,6 +61,7 @@ export const AddProfileContainer = styled.div`
   padding: 20px 30px 30px;
   margin-top: 44px;
 `;
+
 export const AddProfileHeader = styled.div`
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -68,6 +69,7 @@ export const AddProfileHeader = styled.div`
   align-items: center;
   display: flex;
 `;
+
 export const FormTitle = styled.div`
   font-weight: 600;
 `;
@@ -180,6 +182,7 @@ export const Column = styled.div`
     max-width: 100%;
   } ;
 `;
+
 export const PropMsg = styled.small`
   color: #f1bd72;
   padding: 10px 0;
@@ -215,7 +218,7 @@ export const OptionalBar = styled.div`
 `;
 
 export const LinkTab = styled.button.attrs({
-  type: "button"
+  type: 'button',
 })`
   width: auto;
   font-family: 'Nunito Sans', sans-serif;
@@ -225,6 +228,7 @@ export const LinkTab = styled.button.attrs({
 `;
 
 export const OptionalTab = styled.span``;
+
 export const FaceBookIcon = styled(ImFacebook2)`
   font-size: 2rem;
   margin-right: 10px;
@@ -267,7 +271,6 @@ export const SubmitButton = styled.input.attrs({
   type: 'submit',
   value: 'Submit Profile',
 })`
-
   background-color: #e9ecee;
   justify-content: center;
   align-items: center;
@@ -400,15 +403,6 @@ export const SingUpTwoColumnSection = styled.div`
   } ;
 `;
 
-// export const Column = styled.div`
-//   flex: 0 0 50%;
-//   max-width: 50%;
-//   @media only screen and (max-width: 1039px) {
-//     flex: 0 0 100%;
-//     max-width: 100%;
-//   } ;
-// `;
-
 export const PasswordWrapper = styled.div`
   position: relative;
 `;
@@ -477,16 +471,6 @@ export const CheckBoxInput = styled.input`
     }
   }
 `;
-
-// export const CheckIcon = styled(BsCheck2)`
-//   font-size: 1rem;
-//   margin-right: 30px;
-//   color: #8e9091;
-//   position: absolute;
-//   left: 0;
-//   z-index: 2;
-//   font-weight: 700;
-// `;
 
 export const CheckText = styled.span`
   margin-left: 2rem;

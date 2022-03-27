@@ -1,10 +1,8 @@
-import React, {useState, Fragment} from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux';
-import NavBar from '../../common/layout/Navbar'
-import {PageWrapper} from './Elements'
-
-const EditProfile = props => {
+import React, { useState, Fragment } from 'react';
+import NavBar from '../../common/layout/Navbar';
+import { PageWrapper } from './Elements';
+import EditProfileForm from './components/EditProfileForm';
+const EditProfile = (props) => {
   const [formData, setFormDate] = useState({
     company: '',
     website: '',
@@ -14,11 +12,11 @@ const EditProfile = props => {
     githubusername: '',
     bio: '',
     twitter: '',
-    facebook:'',
+    facebook: '',
     linkedin: '',
     youtube: '',
-    instagram: ''
-  })
+    instagram: '',
+  });
   const {
     company,
     website,
@@ -31,18 +29,14 @@ const EditProfile = props => {
     facebook,
     linkedin,
     youtube,
-    instagram
+    instagram,
   } = formData;
   return (
     <PageWrapper>
-      <NavBar/>
-      <EditProfileForm/>
+      <NavBar />
+      <EditProfileForm />
     </PageWrapper>
-  )
-}
+  );
+};
 
-CreateProfile.propTypes = {
-
-}
-
-export default EditProfile
+export default EditProfile;
