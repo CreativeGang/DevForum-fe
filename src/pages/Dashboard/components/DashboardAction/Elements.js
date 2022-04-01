@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MdOutlineCastForEducation } from 'react-icons/md';
 import { GiTie } from 'react-icons/gi';
 import { ImUserTie } from 'react-icons/im';
+import { MdAddAPhoto } from 'react-icons/md';
 
 export const DashbaordButtonsWrapper = styled.div`
   display: flex;
@@ -21,6 +22,11 @@ export const ExpIcon = styled(GiTie)`
   margin-right: 5px;
 `;
 
+export const PhotoIcon = styled(MdAddAPhoto)`
+  color: #5db5bb;
+  margin-right: 5px;
+`;
+
 export const DashbaordButton = styled(Link)`
   padding: 3px 5px;
   background-color: #e9ecee;
@@ -34,6 +40,10 @@ export const DashbaordButton = styled(Link)`
   &:link,
   &:visited {
     color: #333;
+  }
+  &:hover {
+    text-decoration: none;
+    color: #8e9091;
   }
   &:active {
     color: #8e9091;

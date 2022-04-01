@@ -1,0 +1,49 @@
+.dropdown-enter {
+  opacity: 0;
+  max-height: 0px;
+  transition: max-height 10ms ease-in-out, opacity 10ms ease-in-out;
+  overflow: hidden;
+}
+
+.dropdown-enter-active {
+  height: auto;
+  max-height: 100px;
+  opacity: 1;
+}
+
+.dropdown-exit {
+  opacity: 1;
+  max-height: 100px;
+  transition: max-height 10ms ease-in-out, opacity 10ms ease-in-out;
+}
+
+.dropdown-exit-active {
+  overflow: hidden;
+  max-height: 0px;
+}
+
+.rotate-enter {
+  transform: rotate(-90deg);
+  transition: all 300ms ease-in-out;
+}
+
+.rotate-enter-active {
+  transform: rotate(0deg) !important;
+}
+
+.rotate-enter-done {
+  transform: rotate(0deg) !important;
+}
+
+.rotate-exit {
+  transform: rotate(-90deg);
+  transition: all 300ms ease-in-out;
+}
+
+.rotate-exit-active {
+  transform: rotate(0deg);
+}
+
+.rotate-exit-done {
+  transform: rotate(0deg);
+}

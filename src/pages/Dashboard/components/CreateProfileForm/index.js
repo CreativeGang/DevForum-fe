@@ -1,15 +1,28 @@
 import React, { Fragment } from 'react';
-import { PropMessage, CreateProfileLink } from './ProfileFormElements';
+import { PropMessage, WarningIcon } from './ProfileFormElements';
+import {DashbaordButtonsWrapper, DashbaordButton, ProfileIcon, PhotoIcon } from '../DashboardAction/Elements'
 
 const CreateProfileForm = () => {
   return (
     <Fragment>
       <PropMessage>
+        <WarningIcon/>
         You have not yet setup a profile, please add some info
       </PropMessage>
-      <CreateProfileLink to="/create_profile">Create Profile</CreateProfileLink>
+      <DashbaordButtonsWrapper>
+      <DashbaordButton to="/create_profile">
+        <ProfileIcon />
+        Create Profile
+      </DashbaordButton>
+      <DashbaordButton to="/upload">
+        <PhotoIcon />
+        Upload Photo
+      </DashbaordButton>
+      </DashbaordButtonsWrapper>
     </Fragment>
   );
 };
+
+
 
 export default CreateProfileForm;
