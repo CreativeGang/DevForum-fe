@@ -1,12 +1,14 @@
-
-import Navbar from "../../common/layout/Navbar";
-import Article from "../../common/layout/Article";
-import Filter from "../../common/layout/Filter";
-import { PublicPostPage, PostWrapper } from "./PublicPostElement";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { loadPosts, selectFirstNPosts } from "../../store/posts";
-import { NavButton } from "./PublicPostElement";
+import Article from '../../common/layout/Article';
+import Filter from '../../common/layout/Filter';
+import {
+  PublicPostPage,
+  PostContainer,
+  PostWrapper,
+} from './PublicPostElement';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { loadPosts, selectFirstNPosts } from '../../store/posts';
+import { NavButton } from './PublicPostElement';
 
 const PublicPost = () => {
   const dispatch = useDispatch();
@@ -19,11 +21,13 @@ const PublicPost = () => {
     <>
       <PublicPostPage>
         <Filter />
-        <NavButton to='/create_post'>Post</NavButton>
+        <NavButton to="/create_post">Post</NavButton>
         <PostWrapper>
-          {posts.map((post) => (
-            <Article key={post._id} post={post} />
-          ))}
+          <PostContainer>
+            {posts.map((post) => (
+              <Article key={post._id} post={post} />
+            ))}
+          </PostContainer>
         </PostWrapper>
       </PublicPostPage>
     </>

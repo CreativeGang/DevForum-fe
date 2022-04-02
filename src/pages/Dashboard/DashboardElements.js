@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { FaUser } from 'react-icons/fa';
 
+
 export const DashboardWrapper = styled.main`
   background: #f1f2f7;
+  height: 100vh;
 `;
 
 export const DashboardHeader = styled.div`
@@ -141,6 +143,56 @@ export const EduExpContainer = styled.div`
   }
 `;
 
+export const CreateProfileContainer= styled.div`
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: calc(100vh - 20px);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding:18vh 15px;
+  background-color: #fff;
+  &::before,
+  &::after {
+    display: table;
+    content: ' ';
+  }
+  @media only screen and (min-width: 450px) {
+    width: 700px;
+    max-width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 750px;
+  }
+
+  @media only screen and (min-width: 788px) {
+    width: 740px;
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 992px) {
+    width: 970px;
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 1040px) {
+    width: 992px;
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 1170px;
+  }
+
+  @media only screen and (min-width: 1250px) {
+    width: 1202px;
+    max-width: 100%;
+  }
+`;
+
+
 export const DeleteSection = styled.div`
   margin-top: 3vh;
 `;
@@ -154,3 +206,6 @@ export const DeleteButton = styled.button`
   color: #fff;
   border-radius: 3px;
 `;
+
+
+

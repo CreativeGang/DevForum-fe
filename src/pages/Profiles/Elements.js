@@ -18,7 +18,6 @@ export const ProfilesHeader = styled.div`
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: solid 1px #e9ecee;
-  align-items: center;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
   position: relative;

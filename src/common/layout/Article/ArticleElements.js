@@ -10,19 +10,20 @@ export const ArticleWrap = styles.div`
   background-color: #F8F9FA;
   width: 70%;
   justify-content: center;
+  flex-basis: 100%;
   `;
 export const ArticleContainer = styles.div`
   display: flex
   flex-direction: column;
-  margin: 40px 100px;
-  width: 70%;
-  padding: 30px;
+  margin: 40px auto;
+  width: 80%;
+  padding: 15px;
   // height: 500px;
   height: auto;
   background-color: #ffffff;
 
   @media only screen and (max-width: 1280px) {
-    width: 70%;
+    width: 90%;
     margin: 10px auto;
   };
   `;

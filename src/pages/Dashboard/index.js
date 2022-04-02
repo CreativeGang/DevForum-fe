@@ -13,6 +13,7 @@ import {
   DashboardTitle,
   WelcomeIcon,
   PersonalBackgroundContainer,
+  CreateProfileContainer
 } from './DashboardElements';
 import CreateProfileForm from './components/CreateProfileForm';
 import NavBar from '../../common/layout/Navbar';
@@ -62,14 +63,14 @@ const Dashboard = ({
           </PersonalBackgroundWrapper>
         </Fragment>
       ) : (
-        <Fragment>
+        <CreateProfileContainer>
           <CreateProfileForm />
           <DeleteSection>
             <DeleteButton onClick={() => deleteAccount()}>
               Delete My Account
             </DeleteButton>
           </DeleteSection>
-        </Fragment>
+        </CreateProfileContainer>
       )}
     </DashboardWrapper>
   );
