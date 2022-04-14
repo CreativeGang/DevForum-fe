@@ -1,4 +1,4 @@
-import './App.css';
+
 import React, { Fragment, useEffect } from 'react';
 import Login from './pages/Login';
 import Register from './pages/Register';

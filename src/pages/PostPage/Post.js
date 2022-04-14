@@ -21,6 +21,7 @@ function Post(props){
         const target = event.target;
         const value = String.prototype.trim.call(target.value);
         const name = target.name;
+        console.log(target)
 
         setPostContent((preState)=>{ 
             if (name === "tags"){ 

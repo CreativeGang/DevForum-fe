@@ -5,7 +5,6 @@ import { FiYoutube } from 'react-icons/fi';
 import { AiOutlineLinkedin } from 'react-icons/ai';
 import { FiInstagram } from 'react-icons/fi';
 import { AiOutlineFacebook } from 'react-icons/ai';
-import ProfileBanner from '../../../../static/images/BannerBGI.jpg'
 import ProfileBanner4 from '../../../../static/images/baseimg.png'
 
 export const BannerWrapper = styled.div`

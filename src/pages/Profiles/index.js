@@ -42,7 +42,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
                   <ProfileItem key={profile._id} profile={profile} />
                 ))
               ) : (
-                <WariningMsg>ddd</WariningMsg>
+                <WariningMsg>No Profiles Data</WariningMsg>
               )}
             </ProfilesContent>
           </ProfileWrapper>
